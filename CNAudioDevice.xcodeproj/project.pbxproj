@@ -1,0 +1,572 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F91EB4AA2797F37E004148BF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4A92797F37E004148BF /* AppDelegate.m */; };
+		F91EB4AD2797F37E004148BF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4AC2797F37E004148BF /* ViewController.m */; };
+		F91EB4AF2797F382004148BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F91EB4AE2797F382004148BF /* Assets.xcassets */; };
+		F91EB4B22797F382004148BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F91EB4B02797F382004148BF /* Main.storyboard */; };
+		F91EB4B52797F382004148BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4B42797F382004148BF /* main.m */; };
+		F91EB4C02797F382004148BF /* CNAudioDeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4BF2797F382004148BF /* CNAudioDeviceTests.m */; };
+		F91EB4CB2797F382004148BF /* CNAudioDeviceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4CA2797F382004148BF /* CNAudioDeviceUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F91EB4BC2797F382004148BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F91EB49D2797F37E004148BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F91EB4A42797F37E004148BF;
+			remoteInfo = CNAudioDevice;
+		};
+		F91EB4C72797F382004148BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F91EB49D2797F37E004148BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F91EB4A42797F37E004148BF;
+			remoteInfo = CNAudioDevice;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F91EB4A52797F37E004148BF /* CNAudioDevice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CNAudioDevice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91EB4A82797F37E004148BF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F91EB4A92797F37E004148BF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F91EB4AB2797F37E004148BF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F91EB4AC2797F37E004148BF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F91EB4AE2797F382004148BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F91EB4B12797F382004148BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F91EB4B32797F382004148BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91EB4B42797F382004148BF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F91EB4B62797F382004148BF /* CNAudioDevice.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CNAudioDevice.entitlements; sourceTree = "<group>"; };
+		F91EB4BB2797F382004148BF /* CNAudioDeviceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNAudioDeviceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91EB4BF2797F382004148BF /* CNAudioDeviceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNAudioDeviceTests.m; sourceTree = "<group>"; };
+		F91EB4C12797F382004148BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91EB4C62797F382004148BF /* CNAudioDeviceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNAudioDeviceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91EB4CA2797F382004148BF /* CNAudioDeviceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNAudioDeviceUITests.m; sourceTree = "<group>"; };
+		F91EB4CC2797F382004148BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F91EB4A22797F37E004148BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91EB4B82797F382004148BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91EB4C32797F382004148BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F91EB49C2797F37E004148BF = {
+			isa = PBXGroup;
+			children = (
+				F91EB4A72797F37E004148BF /* CNAudioDevice */,
+				F91EB4BE2797F382004148BF /* CNAudioDeviceTests */,
+				F91EB4C92797F382004148BF /* CNAudioDeviceUITests */,
+				F91EB4A62797F37E004148BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F91EB4A62797F37E004148BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F91EB4A52797F37E004148BF /* CNAudioDevice.app */,
+				F91EB4BB2797F382004148BF /* CNAudioDeviceTests.xctest */,
+				F91EB4C62797F382004148BF /* CNAudioDeviceUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F91EB4A72797F37E004148BF /* CNAudioDevice */ = {
+			isa = PBXGroup;
+			children = (
+				F91EB4A82797F37E004148BF /* AppDelegate.h */,
+				F91EB4A92797F37E004148BF /* AppDelegate.m */,
+				F91EB4AB2797F37E004148BF /* ViewController.h */,
+				F91EB4AC2797F37E004148BF /* ViewController.m */,
+				F91EB4AE2797F382004148BF /* Assets.xcassets */,
+				F91EB4B02797F382004148BF /* Main.storyboard */,
+				F91EB4B32797F382004148BF /* Info.plist */,
+				F91EB4B42797F382004148BF /* main.m */,
+				F91EB4B62797F382004148BF /* CNAudioDevice.entitlements */,
+			);
+			path = CNAudioDevice;
+			sourceTree = "<group>";
+		};
+		F91EB4BE2797F382004148BF /* CNAudioDeviceTests */ = {
+			isa = PBXGroup;
+			children = (
+				F91EB4BF2797F382004148BF /* CNAudioDeviceTests.m */,
+				F91EB4C12797F382004148BF /* Info.plist */,
+			);
+			path = CNAudioDeviceTests;
+			sourceTree = "<group>";
+		};
+		F91EB4C92797F382004148BF /* CNAudioDeviceUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F91EB4CA2797F382004148BF /* CNAudioDeviceUITests.m */,
+				F91EB4CC2797F382004148BF /* Info.plist */,
+			);
+			path = CNAudioDeviceUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F91EB4A42797F37E004148BF /* CNAudioDevice */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F91EB4CF2797F382004148BF /* Build configuration list for PBXNativeTarget "CNAudioDevice" */;
+			buildPhases = (
+				F91EB4A12797F37E004148BF /* Sources */,
+				F91EB4A22797F37E004148BF /* Frameworks */,
+				F91EB4A32797F37E004148BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CNAudioDevice;
+			productName = CNAudioDevice;
+			productReference = F91EB4A52797F37E004148BF /* CNAudioDevice.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F91EB4BA2797F382004148BF /* CNAudioDeviceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F91EB4D22797F382004148BF /* Build configuration list for PBXNativeTarget "CNAudioDeviceTests" */;
+			buildPhases = (
+				F91EB4B72797F382004148BF /* Sources */,
+				F91EB4B82797F382004148BF /* Frameworks */,
+				F91EB4B92797F382004148BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F91EB4BD2797F382004148BF /* PBXTargetDependency */,
+			);
+			name = CNAudioDeviceTests;
+			productName = CNAudioDeviceTests;
+			productReference = F91EB4BB2797F382004148BF /* CNAudioDeviceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F91EB4C52797F382004148BF /* CNAudioDeviceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F91EB4D52797F382004148BF /* Build configuration list for PBXNativeTarget "CNAudioDeviceUITests" */;
+			buildPhases = (
+				F91EB4C22797F382004148BF /* Sources */,
+				F91EB4C32797F382004148BF /* Frameworks */,
+				F91EB4C42797F382004148BF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F91EB4C82797F382004148BF /* PBXTargetDependency */,
+			);
+			name = CNAudioDeviceUITests;
+			productName = CNAudioDeviceUITests;
+			productReference = F91EB4C62797F382004148BF /* CNAudioDeviceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F91EB49D2797F37E004148BF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					F91EB4A42797F37E004148BF = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					F91EB4BA2797F382004148BF = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = F91EB4A42797F37E004148BF;
+					};
+					F91EB4C52797F382004148BF = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = F91EB4A42797F37E004148BF;
+					};
+				};
+			};
+			buildConfigurationList = F91EB4A02797F37E004148BF /* Build configuration list for PBXProject "CNAudioDevice" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F91EB49C2797F37E004148BF;
+			productRefGroup = F91EB4A62797F37E004148BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F91EB4A42797F37E004148BF /* CNAudioDevice */,
+				F91EB4BA2797F382004148BF /* CNAudioDeviceTests */,
+				F91EB4C52797F382004148BF /* CNAudioDeviceUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F91EB4A32797F37E004148BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91EB4AF2797F382004148BF /* Assets.xcassets in Resources */,
+				F91EB4B22797F382004148BF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91EB4B92797F382004148BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91EB4C42797F382004148BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F91EB4A12797F37E004148BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91EB4AD2797F37E004148BF /* ViewController.m in Sources */,
+				F91EB4B52797F382004148BF /* main.m in Sources */,
+				F91EB4AA2797F37E004148BF /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91EB4B72797F382004148BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91EB4C02797F382004148BF /* CNAudioDeviceTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F91EB4C22797F382004148BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F91EB4CB2797F382004148BF /* CNAudioDeviceUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F91EB4BD2797F382004148BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F91EB4A42797F37E004148BF /* CNAudioDevice */;
+			targetProxy = F91EB4BC2797F382004148BF /* PBXContainerItemProxy */;
+		};
+		F91EB4C82797F382004148BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F91EB4A42797F37E004148BF /* CNAudioDevice */;
+			targetProxy = F91EB4C72797F382004148BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F91EB4B02797F382004148BF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91EB4B12797F382004148BF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F91EB4CD2797F382004148BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		F91EB4CE2797F382004148BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F91EB4D02797F382004148BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CNAudioDevice/CNAudioDevice.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CNAudioDevice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.CNAudioDevice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F91EB4D12797F382004148BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CNAudioDevice/CNAudioDevice.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CNAudioDevice/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.CNAudioDevice;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F91EB4D32797F382004148BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CNAudioDeviceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.CNAudioDeviceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNAudioDevice.app/Contents/MacOS/CNAudioDevice";
+			};
+			name = Debug;
+		};
+		F91EB4D42797F382004148BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CNAudioDeviceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.1;
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.CNAudioDeviceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CNAudioDevice.app/Contents/MacOS/CNAudioDevice";
+			};
+			name = Release;
+		};
+		F91EB4D62797F382004148BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CNAudioDeviceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.CNAudioDeviceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CNAudioDevice;
+			};
+			name = Debug;
+		};
+		F91EB4D72797F382004148BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = CNAudioDeviceUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Sun.CNAudioDeviceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CNAudioDevice;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F91EB4A02797F37E004148BF /* Build configuration list for PBXProject "CNAudioDevice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91EB4CD2797F382004148BF /* Debug */,
+				F91EB4CE2797F382004148BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F91EB4CF2797F382004148BF /* Build configuration list for PBXNativeTarget "CNAudioDevice" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91EB4D02797F382004148BF /* Debug */,
+				F91EB4D12797F382004148BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F91EB4D22797F382004148BF /* Build configuration list for PBXNativeTarget "CNAudioDeviceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91EB4D32797F382004148BF /* Debug */,
+				F91EB4D42797F382004148BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F91EB4D52797F382004148BF /* Build configuration list for PBXNativeTarget "CNAudioDeviceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F91EB4D62797F382004148BF /* Debug */,
+				F91EB4D72797F382004148BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F91EB49D2797F37E004148BF /* Project object */;
+}
