@@ -14,6 +14,13 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    [[AudioDeviceCore sharedInstance] registerListerner:^(NSArray *  _Nullable data, NSError * _Nullable err) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+        if ([data isKindOfClass:[NSArray class]]) {
+            self.textView.string = data[0];
+        }
+        });
+    }];
 }
 
 

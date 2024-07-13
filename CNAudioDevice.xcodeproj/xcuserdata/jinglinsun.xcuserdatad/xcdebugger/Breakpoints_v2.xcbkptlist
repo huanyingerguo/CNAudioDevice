@@ -14,8 +14,8 @@
             filePath = "CNAudioDevice/AudioCore/AudioDeviceCore.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
             landmarkName = "-getAllAudioDeviceList:"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,15 +23,110 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A07DC86C-6EA0-444A-9148-BBDB6FBD3230"
+            uuid = "CBB5F563-F877-4084-A3D8-E4E6D4D5D7D6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CNAudioDevice/AudioCore/AudioDeviceCore.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "-startListenAudioSourceChange"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4A017DEC-2798-4AB0-90A2-43A7F3B998E0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CNAudioDevice/AudioCore/AudioDeviceCore.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "-startListenAudioSourceChange"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4A017DEC-2798-4AB0-90A2-43A7F3B998E0 - 16976cdf640fb8f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__46-[AudioDeviceCore startListenDeviceListChange]_block_invoke"
+                  moduleName = "CNAudioDevice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jinglinsun/Documents/Allcode/Git_Me/CNAudioDevice/CNAudioDevice/AudioCore/AudioDeviceCore.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "174">
+               </Location>
+               <Location
+                  uuid = "4A017DEC-2798-4AB0-90A2-43A7F3B998E0 - 16976cdf640fb8f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__46-[AudioDeviceCore startListenDeviceListChange]_block_invoke"
+                  moduleName = "CNAudioDevice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jinglinsun/Documents/Allcode/Git_Me/CNAudioDevice/CNAudioDevice/AudioCore/AudioDeviceCore.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "4A017DEC-2798-4AB0-90A2-43A7F3B998E0 - 16976cdf640fb8f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__46-[AudioDeviceCore startListenDeviceListChange]_block_invoke"
+                  moduleName = "CNAudioDevice"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jinglinsun/Documents/Allcode/Git_Me/CNAudioDevice/CNAudioDevice/AudioCore/AudioDeviceCore.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "167"
+                  endingLineNumber = "167"
+                  offsetFromSymbolStart = "242">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC8E215D-4D56-4AC4-B5A6-0B09811DFF31"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CNAudioDevice/AudioCore/AudioDeviceCore.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "136"
+            endingLineNumber = "136"
+            landmarkName = "-onAVCaptureDeviceDisconnect:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20A8E8FE-54E3-4F7F-A5FB-DA6C1E924439"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CNAudioDevice/AudioCore/AudioDeviceCore.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "433"
+            endingLineNumber = "433"
             landmarkName = "-getAllAudioDeviceList:"
             landmarkType = "7">
          </BreakpointContent>
@@ -39,31 +134,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C198D720-A881-42EC-8DC4-566A58D26A34"
-            shouldBeEnabled = "Yes"
+            uuid = "CC8771DA-FDFA-4B64-BC6B-0C8A2C1F6033"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CNAudioDevice/AudioCore/AudioDeviceCore.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "-allCaptureList"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "221A59C4-0942-4746-B983-D64C8A794D0E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CNAudioDevice/AudioCore/AudioDeviceCore.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "260"
+            endingLineNumber = "260"
             landmarkName = "-allCaptureList"
             landmarkType = "7">
          </BreakpointContent>

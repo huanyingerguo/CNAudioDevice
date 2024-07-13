@@ -13,6 +13,40 @@
 #import <CoreAudio/AudioHardwareDeprecated.h>
 #import <AudioToolBox/AudioHardwareService.h>
 
+#define WEAK_REF(obj) \
+__weak typeof(obj) weak_##obj = obj; \
+
+#define STRONG_REF(obj) \
+__strong typeof(weak_##obj) obj = weak_##obj; \
+
+#define PREP_BLOCK WEAK_REF(self);
+
+#define BEGIN_BLOCK \
+STRONG_REF(self); \
+if(self != nil){ \
+@try { \
+
+#define END_BLOCK \
+} \
+@catch (NSException *exception) { \
+}} \
+
+#define SCLog NSLog
+#define SCLogI NSLog
+#define SCLogW NSLog
+#define SCLogE NSLog
+
+@interface AudioDeviceCore ()
+@property (strong) NSMutableArray* listenerList;
+
+//默认输入输出设备改变
+@property (copy) AudioObjectPropertyListenerBlock inputAudioChangeListenerBlock;
+@property (copy) AudioObjectPropertyListenerBlock outputAudioChangeListenerBlock;
+
+//所有设备列表改变
+@property (copy) AudioObjectPropertyListenerBlock deviceListChangeListenerBlock;
+@end
+
 @implementation AudioDeviceCore
 
 + (id)sharedInstance {
@@ -25,6 +59,148 @@
     return sharedObject;
 }
 
+-(instancetype)init{
+    self = [super init];
+    if (self){
+        _listenerList = [NSMutableArray new];
+        [self startListenDeviceListChange];
+        [self startListenAudioSourceChange];
+        [self startListenAVCaptureDeviceChange];
+    }
+    
+    return self;
+}
+
+- (void)registerListerner:(BDEXTDataResultCallback)block {
+    [_listenerList addObject:block];
+}
+
+//监听所有设备改变
+- (BOOL)startListenDeviceListChange {
+    AudioObjectPropertyAddress propertyAddress = {
+        .mSelector = kAudioHardwarePropertyDevices,
+        .mScope = kAudioObjectPropertyScopeGlobal,
+        .mElement = kAudioObjectPropertyElementMaster
+    };
+    
+    PREP_BLOCK
+    self.deviceListChangeListenerBlock = ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress*  inAddresses){
+        BEGIN_BLOCK
+        SCLogI(@"系统语音设备列表改变--->");
+        NSArray *detail = [self allCaptureList];
+        [self dispatchAllListener:detail error:nil];
+        END_BLOCK
+    };
+    
+    OSStatus status = AudioObjectAddPropertyListenerBlock(kAudioObjectSystemObject, &propertyAddress, 0, self.deviceListChangeListenerBlock);
+    if (status != kAudioHardwareNoError){
+        SCLogE(@"startListenDeviceListChange失败:%d",status);
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (BOOL)endListenDeviceListChange {
+    {
+        AudioObjectPropertyAddress propertyAddress = {
+            .mSelector = kAudioHardwarePropertyDevices,
+            .mScope = kAudioObjectPropertyScopeGlobal,
+            .mElement = kAudioObjectPropertyElementMaster
+        };
+        OSStatus status = AudioObjectRemovePropertyListenerBlock(kAudioObjectSystemObject, &propertyAddress, 0, self.deviceListChangeListenerBlock);
+        if (status != kAudioHardwareNoError){
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+- (void)startListenAVCaptureDeviceChange {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAVCaptureDeviceConnect:) name:AVCaptureDeviceWasConnectedNotification object:nil];
+     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onAVCaptureDeviceDisconnect:) name:AVCaptureDeviceWasDisconnectedNotification object:nil];
+}
+
+- (void)endListenAVCaptureDeviceChange {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)onAVCaptureDeviceConnect:(id)notify {
+    SCLogI(@"系统设备插入事件:%@", notify);
+    [self printAllAVCaptureDevices];
+}
+
+- (void)onAVCaptureDeviceDisconnect:(id)notify {
+    SCLogI(@"系统设备拔出事件:%@", notify);
+    [self printAllAVCaptureDevices];
+}
+
+- (void)printAllAVCaptureDevices {
+    //以下代码，部分用户出现频繁卡顿
+    SCLogI(@"系统所有音视频设备:%@", [AVCaptureDevice devices]);
+}
+
+-(BOOL)startListenAudioSourceChange{
+    
+    {
+        PREP_BLOCK
+        self.outputAudioChangeListenerBlock = ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress*  inAddresses){
+            BEGIN_BLOCK
+            SCLogI(@"默认音频输出设备改变...");
+            END_BLOCK
+        };
+        
+        AudioObjectPropertyAddress defaultAddr = [self defaultSpeakerAddress];
+        OSStatus status = AudioObjectAddPropertyListenerBlock(kAudioObjectSystemObject, &defaultAddr, 0,self.outputAudioChangeListenerBlock);
+        if (status != kAudioHardwareNoError){
+            SCLogE(@"startListenSourceChange 输出失败:%d",status);
+            return NO;
+        }
+    }
+    
+    {
+        PREP_BLOCK
+        self.inputAudioChangeListenerBlock = ^(UInt32 inNumberAddresses, const AudioObjectPropertyAddress*  inAddresses){
+            BEGIN_BLOCK
+            SCLogI(@"默认音频输入设备改变...");
+            END_BLOCK
+        };
+        
+        AudioObjectPropertyAddress defaultAddr = [self defaultMicroAddress];
+        OSStatus status = AudioObjectAddPropertyListenerBlock(kAudioObjectSystemObject, &defaultAddr, 0,self.inputAudioChangeListenerBlock);
+        if (status != kAudioHardwareNoError){
+            SCLogE(@"startListenSourceChange 输入失败:%d",status);
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+-(BOOL)endListenAudioSourceChange{
+    {
+        AudioObjectPropertyAddress outputAddr = [self defaultSpeakerAddress];
+        OSStatus status = AudioObjectRemovePropertyListenerBlock(kAudioObjectSystemObject, &outputAddr, 0, self.outputAudioChangeListenerBlock);
+        if (status != kAudioHardwareNoError){
+            return NO;
+        }
+    }
+    
+    {
+        AudioObjectPropertyAddress inputAddr = [self defaultMicroAddress];
+        OSStatus status = AudioObjectRemovePropertyListenerBlock(kAudioObjectSystemObject, &inputAddr, 0, self.inputAudioChangeListenerBlock);
+        if (status != kAudioHardwareNoError){
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+
+#pragma mark- Public Method
 - (NSArray *)allMicrophoneList {
     return nil;
 }
@@ -171,27 +347,6 @@
     return theAnswer;
 }
 
-#pragma mark- Device Address
-- (AudioObjectPropertyAddress)defaultMicroAddress {
-    AudioObjectPropertyAddress address = {
-        kAudioHardwarePropertyDefaultInputDevice,
-        kAudioObjectPropertyScopeInput,
-        kAudioObjectPropertyElementMaster,
-    };
-    
-    return address;
-}
-
-- (AudioObjectPropertyAddress)defaultSpeakerAddress {
-    AudioObjectPropertyAddress address = {
-        kAudioHardwarePropertyDefaultOutputDevice,
-        kAudioObjectPropertyScopeOutput,
-        kAudioObjectPropertyElementMaster,
-    };
-    
-    return address;
-}
-
 #pragma mark- Util
 - (NSString *)reversalString:(NSString *)string {
     NSString *resultStr = @"";
@@ -272,6 +427,12 @@
         }
 #endif
         
+        NSString *name = [self getAudioDeviceStringProperty:dev_array[i] property:kAudioDevicePropertyDeviceName isInput:isInput];
+        
+        if (!name || [name hasPrefix:@"VPAUAggregateAudioDevice"]) {
+            continue;
+        }
+        
         if (isInput) {
             UInt32 kAudioDevicePropertyTapEnabled = 'tapd';
             
@@ -282,12 +443,7 @@
                 continue;
             }
         }
-        
-        NSString *name = [self getAudioDeviceStringProperty:dev_array[i] property:kAudioDevicePropertyDeviceName isInput:isInput];
-        
-        if (!name || [name hasPrefix:@"VPAUAggregateAudioDevice"]) {
-            continue;
-        }
+
         
         NSString *manufacturer = [self getAudioDeviceStringProperty:dev_array[i] property:kAudioDevicePropertyDeviceManufacturer isInput:isInput];
         
@@ -309,5 +465,52 @@
     
     NSLog(@"getAllAudioDeviceList input=%d list:%@", isInput, list);
     return [list copy];
+}
+
+#pragma mark- Device Address
+- (AudioObjectPropertyAddress)defaultMicroAddress {
+    AudioObjectPropertyAddress address = {
+        kAudioHardwarePropertyDefaultInputDevice,
+        kAudioObjectPropertyScopeInput,
+        kAudioObjectPropertyElementMaster,
+    };
+    
+    return address;
+}
+
+- (AudioObjectPropertyAddress)defaultSpeakerAddress {
+    AudioObjectPropertyAddress address = {
+        kAudioHardwarePropertyDefaultOutputDevice,
+        kAudioObjectPropertyScopeOutput,
+        kAudioObjectPropertyElementMaster,
+    };
+    
+    return address;
+}
+
+- (AudioObjectPropertyAddress)masterVolumePropertyAddress {
+    AudioObjectPropertyAddress leftVolumePropertyAddress = {
+        kAudioHardwareServiceDeviceProperty_VirtualMasterVolume,
+        kAudioDevicePropertyScopeOutput,
+        kAudioObjectPropertyElementMaster
+    };
+    
+    return leftVolumePropertyAddress;
+}
+
+- (AudioObjectPropertyAddress)microPhoneVolumePropertyAddress{
+    AudioObjectPropertyAddress microPhoneVolumePropertyAddress = {
+        kAudioDevicePropertyVolumeScalar,
+        kAudioObjectPropertyScopeInput,
+        kAudioObjectPropertyElementMaster
+    };
+    
+    return microPhoneVolumePropertyAddress;
+}
+
+- (void)dispatchAllListener:(id)data error:(NSError *)error {
+    for (BDEXTDataResultCallback callback in _listenerList) {
+        callback(data, error);
+    }
 }
 @end
