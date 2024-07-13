@@ -14,6 +14,7 @@
 		F91EB4B52797F382004148BF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4B42797F382004148BF /* main.m */; };
 		F91EB4C02797F382004148BF /* CNAudioDeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4BF2797F382004148BF /* CNAudioDeviceTests.m */; };
 		F91EB4CB2797F382004148BF /* CNAudioDeviceUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4CA2797F382004148BF /* CNAudioDeviceUITests.m */; };
+		F91EB4DD2797F6C0004148BF /* AudioDeviceCore.m in Sources */ = {isa = PBXBuildFile; fileRef = F91EB4DC2797F6C0004148BF /* AudioDeviceCore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,8 @@
 		F91EB4C62797F382004148BF /* CNAudioDeviceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CNAudioDeviceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91EB4CA2797F382004148BF /* CNAudioDeviceUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CNAudioDeviceUITests.m; sourceTree = "<group>"; };
 		F91EB4CC2797F382004148BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F91EB4DB2797F6C0004148BF /* AudioDeviceCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioDeviceCore.h; sourceTree = "<group>"; };
+		F91EB4DC2797F6C0004148BF /* AudioDeviceCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioDeviceCore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 		F91EB4A72797F37E004148BF /* CNAudioDevice */ = {
 			isa = PBXGroup;
 			children = (
+				F91EB4E1279800D3004148BF /* AudioCore */,
 				F91EB4A82797F37E004148BF /* AppDelegate.h */,
 				F91EB4A92797F37E004148BF /* AppDelegate.m */,
 				F91EB4AB2797F37E004148BF /* ViewController.h */,
@@ -129,6 +133,15 @@
 				F91EB4CC2797F382004148BF /* Info.plist */,
 			);
 			path = CNAudioDeviceUITests;
+			sourceTree = "<group>";
+		};
+		F91EB4E1279800D3004148BF /* AudioCore */ = {
+			isa = PBXGroup;
+			children = (
+				F91EB4DB2797F6C0004148BF /* AudioDeviceCore.h */,
+				F91EB4DC2797F6C0004148BF /* AudioDeviceCore.m */,
+			);
+			path = AudioCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +275,7 @@
 				F91EB4AD2797F37E004148BF /* ViewController.m in Sources */,
 				F91EB4B52797F382004148BF /* main.m in Sources */,
 				F91EB4AA2797F37E004148BF /* AppDelegate.m in Sources */,
+				F91EB4DD2797F6C0004148BF /* AudioDeviceCore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

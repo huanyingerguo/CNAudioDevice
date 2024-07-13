@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "AudioCore/AudioDeviceCore.h"
 
 @implementation ViewController
 
@@ -22,5 +23,9 @@
     // Update the view, if already loaded.
 }
 
+- (IBAction)onBUttonClicked:(id)sender {
+    NSArray *list = [[AudioDeviceCore sharedInstance] allCaptureList];
+    self.textView.string = list[0];
+}
 
 @end

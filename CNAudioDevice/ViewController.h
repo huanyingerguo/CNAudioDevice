@@ -9,6 +9,8 @@
 
 @interface ViewController : NSViewController
 
+@property (weak) IBOutlet NSTextField *textResult;
+@property (unsafe_unretained) IBOutlet NSTextView *textView;
 
 @end
 
